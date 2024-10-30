@@ -28,7 +28,6 @@ services:
     build:
       context: ../rozy.dev
       dockerfile: docker/production/Dockerfile
-    container_name: rozy.dev
     deploy:
       mode: replicated
       replicas: 3

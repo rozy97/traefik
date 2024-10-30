@@ -29,6 +29,9 @@ services:
       context: ../rozy.dev
       dockerfile: docker/production/Dockerfile
     container_name: rozy.dev
+    deploy:
+      mode: replicated
+      replicas: 3
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`rozy.dev`) || Host(`www.rozy.dev`)"

@@ -25,9 +25,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
   rozy.dev:
-    build:
-      context: ../rozy.dev
-      dockerfile: docker/production/Dockerfile
+    image: "rozy97/rozy.dev:v0.0.1"
     deploy:
       mode: replicated
       replicas: 3

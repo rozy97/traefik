@@ -1,5 +1,4 @@
 services:
-
   traefik:
     image: "traefik:v2.9"
     container_name: "traefik"
@@ -36,3 +35,14 @@ services:
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
       - "traefik.http.routers.whoami.middlewares=redirect-http-www@file,redirect-https-www@file"
 
+  adisarana.id:
+    image: "rozy97/adisarana.id:v0.0.1"
+    deploy:
+      mode: replicated
+      replicas: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
+      - "traefik.http.routers.whoami.middlewares=redirect-http-www@file,redirect-https-www@file"

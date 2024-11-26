@@ -30,10 +30,10 @@ services:
       replicas: 3
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`rozy.dev`) || Host(`www.rozy.dev`)"
-      - "traefik.http.routers.whoami.entrypoints=websecure"
-      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
-      - "traefik.http.routers.whoami.middlewares=redirect-http-www@file,redirect-https-www@file"
+      - "traefik.http.routers.rozy.dev.rule=Host(`rozy.dev`) || Host(`www.rozy.dev`)"
+      - "traefik.http.routers.rozy.dev.entrypoints=websecure"
+      - "traefik.http.routers.rozy.dev.tls.certresolver=myresolver"
+      - "traefik.http.routers.rozy.dev.middlewares=redirect-http-www@file,redirect-https-www@file"
 
   adisarana.id:
     image: "rozy97/adisarana.id:v0.0.1"
@@ -42,7 +42,7 @@ services:
       replicas: 3
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"
-      - "traefik.http.routers.whoami.entrypoints=websecure"
-      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
-      - "traefik.http.routers.whoami.middlewares=redirect-http-www@file,redirect-https-www@file"
+      - "traefik.http.routers.adisarana.id.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"
+      - "traefik.http.routers.adisarana.id.entrypoints=websecure"
+      - "traefik.http.routers.adisarana.id.tls.certresolver=myresolver"
+      - "traefik.http.routers.adisarana.id.middlewares=redirect-http-www@file,redirect-https-www@file"

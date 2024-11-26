@@ -23,26 +23,26 @@ services:
       - "./traefik.d:/traefik/traefik.d"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
-  rozy.dev:
+  rozy_dev:
     image: "rozy97/rozy.dev:v1.1.0"
     deploy:
       mode: replicated
       replicas: 3
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.rozy.dev.rule=Host(`rozy.dev`) || Host(`www.rozy.dev`)"
-      - "traefik.http.routers.rozy.dev.entrypoints=websecure"
-      - "traefik.http.routers.rozy.dev.tls.certresolver=myresolver"
-      - "traefik.http.routers.rozy.dev.middlewares=redirect-http-www@file,redirect-https-www@file"
+      - "traefik.http.routers.rozy_dev.rule=Host(`rozy.dev`) || Host(`www.rozy.dev`)"
+      - "traefik.http.routers.rozy_dev.entrypoints=websecure"
+      - "traefik.http.routers.rozy_dev.tls.certresolver=myresolver"
+      - "traefik.http.routers.rozy_dev.middlewares=redirect-http-www@file,redirect-https-www@file"
 
-  adisarana.id:
+  adisarana_id:
     image: "rozy97/adisarana.id:v0.0.1"
     deploy:
       mode: replicated
       replicas: 3
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.adisarana.id.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"
-      - "traefik.http.routers.adisarana.id.entrypoints=websecure"
-      - "traefik.http.routers.adisarana.id.tls.certresolver=myresolver"
-      - "traefik.http.routers.adisarana.id.middlewares=redirect-http-www@file,redirect-https-www@file"
+      - "traefik.http.routers.adisarana_id.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"
+      - "traefik.http.routers.adisarana_id.entrypoints=websecure"
+      - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver"
+      - "traefik.http.routers.adisarana_id.middlewares=redirect-http-www@file,redirect-https-www@file"

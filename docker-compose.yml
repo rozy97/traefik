@@ -39,7 +39,7 @@ services:
       - "traefik.http.routers.rozy_dev.middlewares=redirect-http-www@file,redirect-https-www@file"
 
   adisarana_id:
-    image: "rozy97/adisarana.id:v0.0.2"
+    image: "rozy97/adisarana.id:v0.0.3"
     deploy:
       mode: replicated
       replicas: 3

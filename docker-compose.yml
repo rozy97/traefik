@@ -43,7 +43,7 @@ services:
       - trf
 
   smartmining:
-    image: "rozy97/smartmining:v0.0.7"
+    image: "rozy97/smartmining:v0.0.8"
     deploy:
       mode: replicated
       replicas: 1

@@ -30,7 +30,7 @@ services:
     image: "rozy97/rozy.dev:v1.1.0"
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 1
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.rozy_dev.rule=Host(`rozy.dev`) || Host(`www.rozy.dev`)"
@@ -38,11 +38,17 @@ services:
       - "traefik.http.routers.rozy_dev.tls.certresolver=myresolver"
       - "traefik.http.routers.rozy_dev.middlewares=redirect-http-www@file,redirect-https-www@file"
 
-  adisarana_id:
-    image: "rozy97/adisarana.id:v0.0.3"
+  smartmining:
+    image: "rozy97/smartmining:v0.0.1"
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 1
+
+  adisarana_id:
+    image: "rozy97/adisarana.id:v0.0.4"
+    deploy:
+      mode: replicated
+      replicas: 1
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.adisarana_id.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"

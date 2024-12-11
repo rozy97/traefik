@@ -43,7 +43,7 @@ services:
       - trf
 
   smartmining:
-    image: "rozy97/smartmining:v0.0.3"
+    image: "rozy97/smartmining:v0.0.4"
     deploy:
       mode: replicated
       replicas: 1
@@ -51,7 +51,7 @@ services:
       - trf
 
   adisarana_id:
-    image: "rozy97/adisarana.id:v0.0.9-beta"
+    image: "rozy97/adisarana.id:v0.0.11"
     deploy:
       mode: replicated
       replicas: 1

@@ -43,6 +43,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    networks:
+      - main_network
 
   adisarana_id:
     image: "rozy97/adisarana.id:v0.0.6"
@@ -55,3 +57,9 @@ services:
       - "traefik.http.routers.adisarana_id.entrypoints=websecure"
       - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver2"
       - "traefik.http.routers.adisarana_id.middlewares=redirect-http-www@file,redirect-https-www@file"
+    networks:
+      - main_network
+
+networks:
+  main_network:
+    driver: bridge

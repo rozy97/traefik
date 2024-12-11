@@ -43,7 +43,7 @@ services:
       - trf
 
   smartmining:
-    image: "rozy97/smartmining:v0.0.2"
+    image: "rozy97/smartmining:v0.0.3"
     deploy:
       mode: replicated
       replicas: 1
@@ -51,10 +51,11 @@ services:
       - trf
 
   adisarana_id:
-    image: "rozy97/adisarana.id:v0.0.7"
+    image: "rozy97/adisarana.id:v0.0.7-beta"
     deploy:
       mode: replicated
       replicas: 1
+    restart: always
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.adisarana_id.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"

@@ -16,6 +16,9 @@ services:
       - "--certificatesresolvers.myresolver2.acme.tlschallenge=true"
       - "--certificatesresolvers.myresolver2.acme.email=rozy.firmansyah@gmail.com"
       - "--certificatesresolvers.myresolver2.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesresolvers.myresolver3.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver3.acme.email=rozy.firmansyah@gmail.com"
+      - "--certificatesresolvers.myresolver3.acme.storage=/letsencrypt/acme.json"
       - "--providers.file.directory=/traefik/traefik.d"
     restart: always
     ports:
@@ -52,7 +55,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.adisarana_id.rule=Host(`api.malili.adisarana.id`)"
       - "traefik.http.routers.adisarana_id.entrypoints=websecure"
-      - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver2"
+      - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver3"
     networks:
       - trf
 

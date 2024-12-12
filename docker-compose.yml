@@ -47,6 +47,12 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.adisarana_id.rule=Host(`api.malili.adisarana.id`)"
+      - "traefik.http.routers.adisarana_id.entrypoints=websecure"
+      - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver2"
     networks:
       - trf
 
@@ -58,7 +64,7 @@ services:
     restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.adisarana_id.rule=Host(`adisarana.id`) || Host(`www.adisarana.id`)"
+      - "traefik.http.routers.adisarana_id.rule=Host(`malili.adisarana.id`)"
       - "traefik.http.routers.adisarana_id.entrypoints=websecure"
       - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver2"
       - "traefik.http.routers.adisarana_id.middlewares=redirect-http-www@file,redirect-https-www@file"

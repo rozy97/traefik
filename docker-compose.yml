@@ -53,9 +53,9 @@ services:
     restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.adisarana_id.rule=Host(`api.malili.adisarana.id`)"
-      - "traefik.http.routers.adisarana_id.entrypoints=websecure"
-      - "traefik.http.routers.adisarana_id.tls.certresolver=myresolver3"
+      - "traefik.http.routers.smartmining.rule=Host(`api.malili.adisarana.id`)"
+      - "traefik.http.routers.smartmining.entrypoints=websecure"
+      - "traefik.http.routers.smartmining.tls.certresolver=myresolver3"
     networks:
       - trf
 

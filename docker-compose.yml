@@ -51,7 +51,7 @@ services:
       - trf
 
   adisarana_id:
-    image: "rozy97/adisarana.id:v0.0.13"
+    image: "rozy97/adisarana.id:v0.0.14"
     deploy:
       mode: replicated
       replicas: 1
